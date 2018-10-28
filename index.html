@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,8 @@
     <!--Link to reset CSS-->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/reset.css" />
     <!--Link to Twitter bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <!--Link to pages style CSS-->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/style.css" />
     <!--Link to jQuery Library-->
@@ -20,7 +22,75 @@
     <!--Link to the Train Schedule JS logic-->
     <script src="assets/train-app.js"></script>
 </head>
+
 <body>
-    
+    <div class="container">
+        <!--The Jumbotron-->
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="jumbotron d-flex justify-content-center">
+                    <h1 class="display-5">Hove Train Scheduler</h1>
+                </div>
+            </div>
+        </div>
+
+        <!--Display for the trains already scheduled-->
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Current Train Schedule</h5>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency (min)</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <!--table with the scheduled trains-->
+                            <tbody id="train-display">
+                                <!--default values-->
+                                <td>No trains scheduled</td>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Spaces between the two displays-->
+        <br />
+        <br />
+
+        <!--Display for the schedule a train form-->
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <!--End of container div-->
+    </div>
+
 </body>
+
 </html>
