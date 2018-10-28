@@ -74,7 +74,27 @@
             <div class="col-md-10 offset-md-1">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Add Train</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="trainName">Train Name</label>
+                                <input type="text" class="form-control" id="trainName">
+                            </div>
+                            <div class="form-group">
+                                <label for="destination">Destination</label>
+                                <input type="text" class="form-control" id="destination">
+                            </div>
+                            <div class="form-group">
+                                <label for="departure-time">First Train Departure Time (HH:mm -- military time)</label>
+                                <input type="text" class="form-control" id="departure-time">
+                            </div>
+                            <div class="form-group">
+                                <label for="frequency">Frequency (min)</label>
+                                <input type="number" class="form-control" id="frequency">
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
                     </div>
 
                 </div>
