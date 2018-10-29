@@ -25,7 +25,16 @@ let firstTrain='';
 
 //FUNCTIONS
 //===========================================================================
-
+//function that pushes the new data into firebase
+function dataPush (trainName, trainDestination, firstTrain, frequency) {
+    dataRef.ref().push({
+        name: trainName,
+        destination: trainDestination,
+        firstDeparture: firstTrain,
+        freq: frequency,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+    });
+}
 
 //MAIN PROCESSES
 //============================================================================
@@ -41,6 +50,8 @@ $( '#addTrain' ).on('click', function(event) {
     trainDestination = $( '#destination' ).val().trim();
     firstTrain = $( '#departure-time' ).val().trim();
     frequency = $( '#frequency' ).val().trim();
+    //push the data from the form into the database
+    dataPush(trainName, trainDestination, firstTrain, frequency);
 });
 
 
