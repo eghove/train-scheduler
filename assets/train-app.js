@@ -36,6 +36,7 @@ function dataPush (trainName, trainDestination, firstTrain, frequency) {
     });
 }
 
+
 //MAIN PROCESSES
 //============================================================================
 
@@ -52,10 +53,25 @@ $( '#addTrain' ).on('click', function(event) {
     frequency = $( '#frequency' ).val().trim();
     //push the data from the form into the database
     dataPush(trainName, trainDestination, firstTrain, frequency);
+
 });
 
+//listens for changes in the database, renders the current shedule
+dataRef.ref().on("child_added", function(childSnap) {
 
-
+    //creates the table rows pulling in firebase data
+    var tableRow =$("<tr>");
+    //displays for each item in the table
+    var trainNameDisplay = $("<td>" + childSnap.val().name + "</td>" );
+    var destinationDisplay =$("<td>" + childSnap.val().destination + "</td>" );
+    var frequencyDisplay = $("<td>" + childSnap.val().freq + "</td>" );
+    var nextArrivalDisplay = $("<td>" + '--'+ "</td>" ); //dummy value
+    var minutesAwayDisplay = $("<td>" + '--'+ "</td>" ); //dummy value
+    //append all the displays above to the tableRow
+    tableRow.append(trainNameDisplay).append(destinationDisplay).append(frequencyDisplay).append(nextArrivalDisplay).append(minutesAwayDisplay);
+    //append modified tableRow to the DOM
+    $( '#train-display' ).append(tableRow);
+});
 
 
 }) //end of ready function
